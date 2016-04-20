@@ -1,5 +1,7 @@
 # defaults file for rsyslog
 ---
+rsyslog_version: 8.18.0-0adisconatrusty1
+
 rsyslog_rsyslog_d_presets_20_ufw:
   rules:
     # Log kernel generated UFW log messages to file
