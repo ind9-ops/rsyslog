@@ -1,9 +1,19 @@
 # tasks file for rsyslog
 ---
+- name: Install Ryslog Repository
+  apt_repository:
+    repo: 'ppa:adiscon/v8-stable'
+    update_cache: true
+    state: present
+  tags:
+    - configuration
+    - rsyslog
+    - rsyslog-install
+
 - name: install
   apt:
-    name: rsyslog
-    state: latest
+    name: rsyslog={{rsyslog_version}}
+    state: present
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
   tags:
